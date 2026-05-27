@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  jenkins:
+    image: jgkgopi/custom-jenkins:1.0.0
+    container_name: jenkins-ui
+
+    ports:
+      - "8089:8080"
+      - "50000:50000"
+
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
